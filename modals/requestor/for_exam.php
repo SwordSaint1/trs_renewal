@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="for_exam" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl" role="document">
+  <div class="modal-dialog modal-xl" role="document" style="min-width: 90%;">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Schedule for Exam<br>
@@ -61,6 +61,8 @@
                     <th>Name</th>
                     <th>FALP ID No</th>
                     <th>SP ID No</th>
+                    <th>Exam Status</th>
+                    <th>Attendance Status</th>
             </thead>
             <tbody id="list_of_req_for_exam" style="text-align:center;"></tbody>
                 </table>

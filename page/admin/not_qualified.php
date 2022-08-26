@@ -83,7 +83,6 @@
                     <th>Batch No</th>
                     <th>Status</th>
                     <th>Remarks</th>
-
             </thead>
             <tbody id="list_of_not_qualif" style="text-align:center;"></tbody>
                 </table>

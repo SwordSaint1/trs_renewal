@@ -1,28 +1,22 @@
 <?php include 'plugins/navbar.php';?>
-<?php include 'plugins/sidebar/schedulebar.php';?>
+<?php include 'plugins/sidebar/failedbar.php';?>
   <!-- Main Sidebar Container -->
-
- <!-- Content Wrapper. Contains page content -->
+<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">List of Schedules</h1>
+            <h1 class="m-0">List of Failed</h1>
             <br>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-              <li class="breadcrumb-item active">List of Schedules</li>
+              <li class="breadcrumb-item active">List of Failed</li>
             </ol>
           </div><!-- /.col -->
-           <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-left">
-             <a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#add_sched" onclick="add_schedule()">Add Schedule</a>
-            </ol>
-          </div>
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
@@ -46,11 +40,19 @@
                 <div class="card-body">
                    <div class="row">
                     <div class="col-3">
-                    <label>Start Date:</label> <input type="date" name="start_date_view_sched" id="start_date_view_sched" class="form-control">
+                    <label>Start Date:</label> <input type="date" name="start_date_failed_req" id="start_date_failed_req" class="form-control">
                     </div>
-                     <div class="col-9">
+                     <div class="col-3">
+                    <label>Shift:</label> 
+                    <select id="shift_failed_req" class="form-control">
+                      <option value="">Select Shift</option>
+                      <option value="DS">DS</option>
+                      <option value="NS">NS</option>
+                    </select>
+                    </div>
+                     <div class="col-6">
                       <span style="visibility:hidden;">.</span>
-                      <p style="text-align:right;"><a href="#" class="btn btn-primary" onclick="load_sched()">Search <i class="fa fa-search"></a></i></p>
+                      <p style="text-align:right;"><a href="#" class="btn btn-primary" onclick="load_failed_req()">Search <i class="fa fa-search"></a></i></p>
                     </div>
                   </div>
                   <br>
@@ -59,17 +61,16 @@
                        <div class="card-body table-responsive p-0" style="height: 420px;">
                 <table class="table table-head-fixed text-nowrap table-hover" id="">
                 <thead style="text-align:center;">
-                    <th>#</th>
+                   <th>#</th>
                     <th>Schedule Code</th>
                     <th>Shift</th>
+                    <th>Slot</th>
                     <th>Start Date</th>
-                    <th>End Date</th>
                     <th>Start Time</th>
-                    <th>End Time</th>
                     <th>Location</th>
                     <th>Examiner</th>
             </thead>
-            <tbody id="list_of_sched" style="text-align:center;"></tbody>
+            <tbody id="list_of_sched_failed_req" style="text-align:center;"></tbody>
                 </table>
             <div class="row">
                   <div class="col-6">
@@ -106,4 +107,4 @@
 </div>
 
 <?php include 'plugins/footer.php';?>
-<?php include 'plugins/javascript/schedule_script.php';?>
+<?php include 'plugins/javascript/failed_script.php';?>

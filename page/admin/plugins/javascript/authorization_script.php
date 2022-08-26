@@ -22,7 +22,7 @@ const load_for_auth =()=>{
                    $('#spinner').fadeOut(function(){                       
                     });
                 }
-   });
+   }); 
 }
 
 const get_for_authorization_details =(param)=>{
@@ -162,11 +162,15 @@ const submit =()=>{
         swal('Information', 'Invalid Status', 'info');
     }else if(attendance_status == 'Did_not_Attend' && exam_status == 'Ongoing'){
         swal('Information', 'Invalid Status', 'info');
+    }else if(attendance_status == 'Did_not_Attend' && exam_status == 'Failed'){
+        swal('Information', 'Invalid Status', 'info');
+    }else if(attendance_status == 'Attend' && exam_status == 'Cancelled'){
+        swal('Information', 'Invalid Status', 'info');
     }else{
     var numberOfChecked = arr.length;
     if(numberOfChecked > 0){
  
-    $.ajax({
+    $.ajax({ 
         url: '../../process/admin/authorization.php',
         type: 'POST',
         cache: false,
@@ -177,7 +181,7 @@ const submit =()=>{
             exam_status:exam_status
         },success:function(response) {
             if (response == 'success') {
-                swal('Success','Successfully Auhtorize', 'success');
+                swal('Success','Successfully Authorize', 'success');
                 load_for_auth();
                 setTimeout(refresh, 1000);
             }else{

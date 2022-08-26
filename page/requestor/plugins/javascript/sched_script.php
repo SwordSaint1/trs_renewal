@@ -149,9 +149,9 @@ const sched =()=>{
 			trainer:trainer,
 			slot:slot,
         },success:function(response) {
-            // console.log(response);
+            console.log(response);
             
-            if (response == 'fail'){
+            if (response == 'error'){
                 swal('FAILED', 'FAILED', 'error');   
             }else{
                 search_for_sched();

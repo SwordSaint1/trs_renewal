@@ -30,7 +30,7 @@
                         $error = $error + 1;
                     }else{
                         // CHECK DATA
-                    $prevQuery = "SELECT id FROM trs_renewal_request WHERE name = '$line[4]' AND falp_id_no = '$line[5]' AND sp_id_no = '$line[6]'";
+                    $prevQuery = "SELECT id FROM trs_renewal_request WHERE name = '$line[4]' AND  authorization_no = '$line[3]'";
                     $res = $conn->prepare($prevQuery);
                     $res->execute();
                     if($res->rowCount() > 0){

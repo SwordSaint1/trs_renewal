@@ -7,11 +7,12 @@ if ($method == 'fetch_qualified') {
 	$name = $_POST['name'];
 	$process = $_POST['process'];
 	$c = 0;
-	$query = "SELECT * FROM trs_renewal_request WHERE name LIKE '$name%' AND process LIKE '$process%' AND status = 'Qualified'";
+	$query = "SELECT * FROM trs_renewal_request WHERE name LIKE '$name%' AND process LIKE '$process%' AND status = 'Qualified' AND exam_status IS NULL";
 	$stmt = $conn->prepare($query);
 	$stmt->execute();
 	if ($stmt->rowCount() > 0) {
 		foreach($stmt->fetchALL() as $j){
+			$reason = $j['reason'];
 			$c++;
 			
 
@@ -26,7 +27,11 @@ if ($method == 'fetch_qualified') {
 				echo '<td>'.$j['sp_id_no'].'</td>';
 				echo '<td>'.$j['batch_no'].'</td>';
 				echo '<td>'.$j['status'].'</td>';
-				echo '<td>'.$j['reason'].'</td>';
+				if ($reason = 'n/a') {
+					echo '<td></td>';
+				}else{
+					echo '<td>'.$j['reason'].'</td>';
+				}				
 			echo '</tr>';
 		}
 	}else{
@@ -40,7 +45,7 @@ if ($method == 'fetch_not_qualified') {
 	$name = $_POST['name'];
 	$process = $_POST['process'];
 	$c = 0;
-	$query = "SELECT * FROM trs_renewal_request WHERE name LIKE '$name%' AND process LIKE '$process%' AND status = 'NOT QUALIFIED'";
+	$query = "SELECT * FROM trs_renewal_request WHERE name LIKE '$name%' AND process LIKE '$process%' AND status = 'NOT QUALIFIED' AND exam_status IS NULL";
 	$stmt = $conn->prepare($query);
 	$stmt->execute();
 	if ($stmt->rowCount() > 0) {

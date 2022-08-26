@@ -10,6 +10,8 @@
 include '../../modals/logout.php';
 include '../../modals/admin/import.php';
 include '../../modals/admin/for_authorization.php';
+include '../../modals/admin/passed.php';
+include '../../modals/admin/failed.php';
 include '../../modals/schedule/add_sched.php';
 
 

@@ -1,27 +1,25 @@
 <script type="text/javascript">
 $(document).ready(function(){
-    load_not_qualif();
+    load_expired();
 });
-const load_not_qualif =()=>{
+const load_expired =()=>{
 
      $('#spinner').css('display','block');
      
-     var name = document.getElementById('name_not_qualif_requestor').value;
-     var process = document.getElementById('process_not_qualif_requestor').value;
-     console.log(name);
-     console.log(process);
+     var name = document.getElementById('name_expired_requestor').value;
+     var process = document.getElementById('process_expired_requestor').value;
      
            $.ajax({
-                url: '../../process/requestor/qualified.php',
+                url: '../../process/requestor/expired.php',
                 type: 'POST',
                 cache: false,
                 data:{
-                    method: 'fetch_not_qualified',
+                    method: 'fetch_expired',
                     name:name,
 					process:process,
                   
                 },success:function(response){
-                    document.getElementById('list_of_not_qualif').innerHTML = response;
+                    document.getElementById('list_of_expired').innerHTML = response;
                     $('#spinner').fadeOut(function(){                       
                     });
                 }

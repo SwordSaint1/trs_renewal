@@ -37,7 +37,7 @@
           </li>
            
            <li class="nav-item">
-            <a href="qualified.php" class="nav-link ">
+            <a href="qualified.php" class="nav-link">
               <i class="fas fa-check-circle"></i>
               <p>
                 List of Qualified
@@ -47,7 +47,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="not_qualified.php" class="nav-link active">
+            <a href="not_qualified.php" class="nav-link">
               <i class="fas fa-window-close"></i>
               <p>
                 List of Not Qualified
@@ -65,8 +65,8 @@
               </p>
             </a>
           </li>
-          
-            <li class="nav-item">
+
+          <li class="nav-item">
             <a href="sched.php" class="nav-link">
               <i class="fas fa-calendar-alt"></i>
               <p>
@@ -75,7 +75,6 @@
               </p>
             </a>
           </li>
-
 
           <li class="nav-item">
             <a href="for_exam.php" class="nav-link">
@@ -87,8 +86,8 @@
             </a>
           </li>
 
-            <li class="nav-item">
-            <a href="passed.php" class="nav-link">
+          <li class="nav-item">
+            <a href="passed.php" class="nav-link ">
               <i class="fas fa-check-circle"></i>
               <p>
                 List of Passed
@@ -98,7 +97,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="failed.php" class="nav-link">
+            <a href="failed.php" class="nav-link active">
               <i class="fas fa-window-close"></i>
               <p>
                 List of Failed
@@ -106,8 +105,8 @@
               </p>
             </a>
           </li>
-
-          <li class="nav-item">
+           
+           <li class="nav-item">
             <a href="take.php" class="nav-link">
               <i class="fas fa-window-close"></i>
               <p>

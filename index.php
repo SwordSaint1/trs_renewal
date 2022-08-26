@@ -20,7 +20,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <h2><b>TRS <br>RENEWAL OF BADGE</b></h2>
+    <h2><b>E-RENEW</b></h2>
   </div>
   <!-- /.login-logo -->
   <div class="card">

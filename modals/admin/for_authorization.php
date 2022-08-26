@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="for_authorization" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl" role="document">
+  <div class="modal-dialog modal-xl" role="document" style="min-width: 90%;">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title col-11" id="exampleModalLabel">For Authorization<br>
@@ -80,6 +80,7 @@
                 <option value="Passed">Passed</option>
                 <option value="Failed">Failed</option>
                 <option value="Ongoing">Ongoing</option>
+                <option value="Cancelled">Cancelled</option>
               </select>
             </div> 
             <div class="col-3">
@@ -105,6 +106,8 @@
                     <th>Name</th>
                     <th>FALP ID No</th>
                     <th>SP ID No</th>
+                    <th>Exam Status</th>
+                    <th>Attendance Status</th>
             </thead>
             <tbody id="list_of_for_athorization" style="text-align:center;"></tbody>
                 </table>

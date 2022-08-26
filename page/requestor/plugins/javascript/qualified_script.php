@@ -1,5 +1,7 @@
 <script type="text/javascript">
-
+$(document).ready(function(){
+    load_qualif();
+});
 const load_qualif =()=>{
 
      $('#spinner').css('display','block');

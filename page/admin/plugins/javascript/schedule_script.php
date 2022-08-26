@@ -79,10 +79,12 @@ const register_sched =()=>{
 
                    if (response == 'Already Exist') {
                    	swal('Information','Schedule Already Exist!','info');
+                   	setTimeout(refresh, 1000);
                    }
                    else if (response == 'success') {
                    	swal('Success','Successfully Registered!','success');
                     load_sched();
+                    setTimeout(refresh, 1000);
                    }else{
                    	swal('Error','Error!','error');      
                    }
@@ -91,6 +93,9 @@ const register_sched =()=>{
 }
 }
 
+const refresh =()=>{
+     window.location.reload();
+}
 
 const load_sched =()=>{
 	$('#spinner').css('display','block');

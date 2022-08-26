@@ -63,7 +63,7 @@
                 <table class="table table-head-fixed text-nowrap table-hover" id="">
                 <thead style="text-align:center;">
                     <th>#</th>
-                    <th>Training Code</th>
+                    <th>Schedule Code</th>
                     <th>Shift</th>
                     <th>Slot</th>
                     <th>Start Date</th>

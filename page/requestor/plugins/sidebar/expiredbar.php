@@ -37,7 +37,7 @@
           </li>
            
            <li class="nav-item">
-            <a href="qualified.php" class="nav-link ">
+            <a href="qualified.php" class="nav-link">
               <i class="fas fa-check-circle"></i>
               <p>
                 List of Qualified
@@ -47,7 +47,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="not_qualified.php" class="nav-link active">
+            <a href="not_qualified.php" class="nav-link">
               <i class="fas fa-window-close"></i>
               <p>
                 List of Not Qualified
@@ -56,8 +56,8 @@
             </a>
           </li>
 
-           <li class="nav-item">
-            <a href="expired.php" class="nav-link">
+          <li class="nav-item">
+            <a href="expired.php" class="nav-link active">
               <i class="fas fa-exclamation-triangle "></i>
               <p>
                 List of Expired
@@ -65,7 +65,7 @@
               </p>
             </a>
           </li>
-          
+
             <li class="nav-item">
             <a href="sched.php" class="nav-link">
               <i class="fas fa-calendar-alt"></i>
@@ -75,7 +75,6 @@
               </p>
             </a>
           </li>
-
 
           <li class="nav-item">
             <a href="for_exam.php" class="nav-link">

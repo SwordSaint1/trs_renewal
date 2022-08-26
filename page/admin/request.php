@@ -82,8 +82,7 @@
                     <th>SP ID No</th>
                     <th>Batch No</th>
                     <th>Status</th>
-                    <th>Remarks</th>
-
+                    <th>Reason</th>
             </thead>
             <tbody id="list_of_request" style="text-align:center;"></tbody>
                 </table>

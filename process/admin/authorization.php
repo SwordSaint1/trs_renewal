@@ -62,6 +62,8 @@ if ($method == 'fetch_prev_auth') {
 				echo '<td>'.$j['name'].'</td>';
 				echo '<td>'.$j['falp_id_no'].'</td>';
 				echo '<td>'.$j['sp_id_no'].'</td>';
+				echo '<td>'.$j['exam_status'].'</td>';
+				echo '<td>'.$j['attendance_status'].'</td>';
 			echo '</tr>';
 		}
 	}else{
@@ -104,7 +106,7 @@ if ($method == 'authorization') {
     $count = count($id);
     foreach($id as $x){
     	if ($attendance_status == 'Attend') {
-    		$query = "UPDATE trs_renewal_request SET exam_status = '$exam_status', attendance_status = '$attendance_status', attend = 1 WHERE id = '$x'";
+    		$query = "UPDATE trs_renewal_request SET exam_status = '$exam_status', attendance_status = '$attendance_status', attend = 1, not_attend = NULL WHERE id = '$x'";
     		$stmt = $conn->prepare($query);
     		if ($stmt->execute()) {
     			$count = $count - 1;
@@ -112,7 +114,7 @@ if ($method == 'authorization') {
 
     		}
     	}elseif($attendance_status == 'Did_not_Attend'){
-    		$query2 = "UPDATE trs_renewal_request SET exam_status = '$exam_status', attendance_status = '$attendance_status', not_attend = 1 WHERE id = '$x'";
+    		$query2 = "UPDATE trs_renewal_request SET attend = NULL,not_attend = NULL, remarks = NULL, examiner = NULL, location = NULL, shift = NULL, start_date = NULL, end_date = NULL, start_time = NULL, end_time = NULL, tr_code = NULL, exam_status = NULL, attendance_status	= NULL WHERE id = '$x'";
     		$stmt2 = $conn->prepare($query2);
     		if ($stmt2->execute()) {
     			$count = $count - 1;
