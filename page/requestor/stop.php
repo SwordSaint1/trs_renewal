@@ -1,5 +1,5 @@
 <?php include 'plugins/navbar.php';?>
-<?php include 'plugins/sidebar/passedbar.php';?>
+<?php include 'plugins/sidebar/stopbar.php';?>
   <!-- Main Sidebar Container -->
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -8,13 +8,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">List of Passed</h1>
+            <h1 class="m-0">List of Stop Processing</h1>
             <br>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-              <li class="breadcrumb-item active">List of Passed</li>
+              <li class="breadcrumb-item active">List of Stop Processing</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -31,7 +31,7 @@
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">
-                  <input type="hidden" name="" id="passed_requested_by" value="<?=$name;?>">
+                  <input type="hidden" name="" id="stop_requested_by" value="<?=$name;?>">
                 </h3>
               </div>
               <!-- /.card-header -->
@@ -40,11 +40,11 @@
                 <div class="card-body">
                    <div class="row">
                     <div class="col-3">
-                    <label>Start Date:</label> <input type="date" name="start_date_passed_req" id="start_date_passed_req" class="form-control">
+                    <label>Start Date:</label> <input type="date" name="start_date_stop_req" id="start_date_stop_req" class="form-control">
                     </div>
                      <div class="col-3">
                     <label>Shift:</label> 
-                    <select id="shift_passed_req" class="form-control">
+                    <select id="shift_stop_req" class="form-control">
                       <option value="">Select Shift</option>
                       <option value="DS">DS</option>
                       <option value="NS">NS</option>
@@ -52,7 +52,7 @@
                     </div>
                      <div class="col-6">
                       <span style="visibility:hidden;">.</span>
-                      <p style="text-align:right;"><a href="#" class="btn btn-primary" onclick="load_passed_req()">Search <i class="fa fa-search"></a></i></p>
+                      <p style="text-align:right;"><a href="#" class="btn btn-primary" onclick="load_stop_req()">Search <i class="fa fa-search"></a></i></p>
                     </div>
                   </div>
                   <br>
@@ -70,7 +70,7 @@
                     <th>Location</th>
                     <th>Examiner</th>
             </thead>
-            <tbody id="list_of_sched_passed_req" style="text-align:center;"></tbody>
+            <tbody id="list_of_sched_stop_req" style="text-align:center;"></tbody>
                 </table>
             <div class="row">
                   <div class="col-6">
@@ -107,4 +107,4 @@
 </div>
 
 <?php include 'plugins/footer.php';?>
-<?php include 'plugins/javascript/passed_script.php';?>
+<?php include 'plugins/javascript/stop_script.php';?>

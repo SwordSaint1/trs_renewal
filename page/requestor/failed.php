@@ -31,7 +31,7 @@
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">
-                  <input type="hidden" name="" id="user" value="<?=$name;?>">
+                  <input type="hidden" name="" id="failed_requested_by" value="<?=$name;?>">
                 </h3>
               </div>
               <!-- /.card-header -->

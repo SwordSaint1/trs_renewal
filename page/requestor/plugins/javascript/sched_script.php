@@ -128,6 +128,7 @@ const sched =()=>{
   var location = document.getElementById('location_view_req').value;
   var trainer = document.getElementById('trainer_view_req').value;
   var slot = document.getElementById('slot_view_req').value;
+  var requested_by = document.getElementById('sched_by').value;
 
     var numberOfChecked = arr.length;
     if(numberOfChecked > 0){
@@ -148,6 +149,7 @@ const sched =()=>{
 			location:location,
 			trainer:trainer,
 			slot:slot,
+            requested_by:requested_by
         },success:function(response) {
             console.log(response);
             

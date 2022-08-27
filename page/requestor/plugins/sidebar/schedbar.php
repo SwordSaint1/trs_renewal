@@ -116,6 +116,25 @@
             </a>
           </li>
            
+            <li class="nav-item">
+            <a href="stop.php" class="nav-link ">
+              <i class="fas fa-window-close"></i>
+              <p>
+                List of Stop Processing
+               
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="transfer.php" class="nav-link ">
+              <i class="fas fa-window-close"></i>
+              <p>
+                List of Transfer to Other Process
+               
+              </p>
+            </a>
+          </li>
           </li>  
          <?php include 'logout.php' ;?>
         </ul>

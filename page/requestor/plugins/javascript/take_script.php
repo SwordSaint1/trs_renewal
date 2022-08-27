@@ -8,7 +8,7 @@ const load_take_req =()=>{
     $('#spinner').css('display','block');
     var start = document.getElementById('start_date_take_req').value;
     var shift = document.getElementById('shift_take_req').value;
-
+    var requested_by = document.getElementById('take_requested_by').value;
     $.ajax({
       url: '../../process/requestor/take.php',
                 type: 'POST',
@@ -16,7 +16,8 @@ const load_take_req =()=>{
                 data:{
                     method: 'fetch_sched_take_req',
                     start:start,
-                    shift:shift
+                    shift:shift,
+                    requested_by:requested_by
                 },success:function(response){
                    document.getElementById('list_of_sched_take_req').innerHTML = response;
                    $('#spinner').fadeOut(function(){                       
@@ -54,14 +55,15 @@ prev_req();
 
 const prev_req =()=>{
     var tr_code = document.getElementById('id_training_code_take_req').value;
-
+    var requested_by = document.getElementById('take_requested_by_prev').value;
     $.ajax({
       url: '../../process/requestor/take.php',
                 type: 'POST',
                 cache: false,
                 data:{
                     method: 'fetch_prev_take_req',
-                    tr_code:tr_code
+                    tr_code:tr_code,
+                    requested_by:requested_by
                 },success:function(response){
                    document.getElementById('list_of_take_req').innerHTML = response;
             

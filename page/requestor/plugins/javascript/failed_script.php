@@ -8,7 +8,7 @@ const load_failed_req =()=>{
 	$('#spinner').css('display','block');
 	var start = document.getElementById('start_date_failed_req').value;
 	var shift = document.getElementById('shift_failed_req').value;
-
+    var requested_by = document.getElementById('failed_requested_by').value;
 	$.ajax({
       url: '../../process/requestor/failed.php',
                 type: 'POST',
@@ -16,7 +16,8 @@ const load_failed_req =()=>{
                 data:{
                     method: 'fetch_sched_failed_req',
                     start:start,
-                    shift:shift
+                    shift:shift,
+                    requested_by:requested_by
                 },success:function(response){
                    document.getElementById('list_of_sched_failed_req').innerHTML = response;
                    $('#spinner').fadeOut(function(){                       
@@ -55,14 +56,15 @@ prev_req();
 	
 const prev_req =()=>{
     var tr_code = document.getElementById('id_training_code_failed_req').value;
-
+    var requested_by = document.getElementById('failed_requested_by_prev').value;
     $.ajax({
       url: '../../process/requestor/failed.php',
                 type: 'POST',
                 cache: false,
                 data:{
                     method: 'fetch_prev_failed_req',
-                    tr_code:tr_code
+                    tr_code:tr_code,
+                    requested_by:requested_by
                 },success:function(response){
                    document.getElementById('list_of_failed_req').innerHTML = response;
             
@@ -144,7 +146,7 @@ const submit_final_status =()=>{
             final_status:final_status,
             sc_code:sc_code
         },success:function(response) {
-            // console.log(response);
+            console.log(response);
 
              if (response == 'success'){
                   load_failed_req();

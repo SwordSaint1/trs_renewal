@@ -42,26 +42,54 @@ WHERE trs_renewal_sched.start_date LIKE '$start%' AND trs_renewal_sched.shift LI
 if ($method == 'fetch_prev_failed') {
 	$tr_code = $_POST['tr_code'];
 	$c = 0;
-	$query = "SELECT * FROM trs_renewal_request WHERE tr_code = '$tr_code' AND exam_status = 'Failed'";
+	$query = "SELECT * FROM trs_renewal_request WHERE tr_code = '$tr_code' AND exam_status = 'Failed' AND ft_status = 1";
 	$stmt = $conn->prepare($query);
 	$stmt->execute();
 	if ($stmt->rowCount() > 0) {
 		foreach($stmt->fetchALL() as $j){
 			$c++;
-			
+			 $start_date = $j['start_date'];
+			 $shift = $j['shift'];
+			  substr($start_time = $j['start_time'],0,2);
+			 substr($end_time = $j['end_time'],1,1);
 
-			echo '<tr>';
-				echo '<td>'.$c.'</td>';
-				echo '<td>'.$j['code'].'</td>';
-				echo '<td>'.$j['process'].'</td>';
-				echo '<td>'.$j['expiration_on_month'].'</td>';
-				echo '<td>'.$j['authorization_no'].'</td>';
-				echo '<td>'.$j['name'].'</td>';
-				echo '<td>'.$j['falp_id_no'].'</td>';
-				echo '<td>'.$j['sp_id_no'].'</td>';
-				echo '<td>'.$j['exam_status'].'</td>';
-				echo '<td>'.$j['attendance_status'].'</td>';
-			echo '</tr>';
+
+		if ($shift == 'NS') {
+				if ($start_time <= 12) {
+					   $sdate = date('Y-m-d',(strtotime('-1 day',strtotime($start_date))));
+
+					    echo '<tr>';
+							echo '<td>'.$c.'</td>';
+							echo '<td>'.$j['code'].'</td>';
+							echo '<td>'.$j['process'].'</td>';
+							echo '<td>'.$j['expiration_on_month'].'</td>';
+							echo '<td>'.$j['authorization_no'].'</td>';
+							echo '<td>'.$j['name'].'</td>';
+							echo '<td>'.$j['falp_id_no'].'</td>';
+							echo '<td>'.$j['sp_id_no'].'</td>';
+							echo '<td>'.$j['attendance_status'].'</td>';
+							echo '<td>'.$j['exam_status'].'</td>';
+							echo '<td>'.$sdate.'</td>';
+							echo '<td>'.$j['examiner'].'</td>';
+						echo '</tr>';
+				}
+			}else{
+				 echo '<tr>';
+							echo '<td>'.$c.'</td>';
+							echo '<td>'.$j['code'].'</td>';
+							echo '<td>'.$j['process'].'</td>';
+							echo '<td>'.$j['expiration_on_month'].'</td>';
+							echo '<td>'.$j['authorization_no'].'</td>';
+							echo '<td>'.$j['name'].'</td>';
+							echo '<td>'.$j['falp_id_no'].'</td>';
+							echo '<td>'.$j['sp_id_no'].'</td>';
+							echo '<td>'.$j['attendance_status'].'</td>';
+							echo '<td>'.$j['exam_status'].'</td>';
+							echo '<td>'.$j['start_date'].'</td>';
+							echo '<td>'.$j['examiner'].'</td>';
+						echo '</tr>';
+			}
+
 		}
 	}else{
 			echo '<tr>';

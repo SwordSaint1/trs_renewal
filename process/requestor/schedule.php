@@ -91,6 +91,7 @@ if ($method == 'commit_sched') {
 	$end_time = $_POST['end_time'];
 	$location = $_POST['location'];
 	$trainer = $_POST['trainer'];
+	$requested_by = $_POST['requested_by'];	
 	$slot = $_POST['slot'];
     //COUNT OF ITEM TO BE UPDATED
     $count = count($id);
@@ -112,7 +113,7 @@ if ($method == 'commit_sched') {
 
     			foreach($id as $x){
             	
-            	$query = "UPDATE trs_renewal_request SET examiner = '$trainer', location = '$location', shift = '$shift', start_date = '$start_date', end_date = '$end_date', start_time = '$start_time', end_time = '$end_time', tr_code = '$training_code' WHERE id = '$x'";
+            	$query = "UPDATE trs_renewal_request SET examiner = '$trainer', location = '$location', shift = '$shift', start_date = '$start_date', end_date = '$end_date', start_time = '$start_time', end_time = '$end_time', tr_code = '$training_code',requested_by = '$requested_by' WHERE id = '$x'";
             	$stmt3 = $conn->prepare($query);
             	if ($stmt3->execute()) {
             	// echo 's';

@@ -13,6 +13,8 @@ include '../../modals/requestor/for_exam.php';
 include '../../modals/requestor/passed.php';
 include '../../modals/requestor/failed.php';
 include '../../modals/requestor/take.php';
+include '../../modals/requestor/stop.php';
+include '../../modals/requestor/transfer.php';
 ?>
 <!-- jQuery -->
 <!-- <script src="../../plugins/jquery/jquery.min.js"></script> -->

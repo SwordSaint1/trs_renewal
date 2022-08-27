@@ -63,6 +63,12 @@
                   <p>List of Not Qualified</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="expired.php" class="nav-link">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>List of Expired</p>
+                </a>
+              </li>
             </ul>
           </li>
 

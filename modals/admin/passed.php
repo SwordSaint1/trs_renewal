@@ -74,6 +74,8 @@
                     <th>SP ID No</th>
                     <th>Exam Status</th>
                     <th>Attendance Status</th>
+                    <th>Exam Start Date</th>
+                    <th>Examiner</th>
             </thead>
             <tbody id="list_of_passed" style="text-align:center;"></tbody>
                 </table>

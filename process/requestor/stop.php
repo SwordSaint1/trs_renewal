@@ -3,7 +3,7 @@ include '../conn.php';
 
 $method = $_POST['method'];
 
-if ($method == 'fetch_sched_take_req') {
+if ($method == 'fetch_sched_stop_req') {
 	$start = $_POST['start'];
 	$shift = $_POST['shift'];
 	$requested_by = $_POST['requested_by'];
@@ -13,7 +13,7 @@ if ($method == 'fetch_sched_take_req') {
 trs_renewal_sched.start_time,TIME_FORMAT(trs_renewal_sched.start_time, '%H:%i:%s') as start_time,trs_renewal_sched.end_time, TIME_FORMAT(trs_renewal_sched.end_time, '%H:%i:%s') as end_time,trs_renewal_sched.location,trs_renewal_sched.trainer,trs_renewal_sched.slot,trs_renewal_request.tr_code
 FROM trs_renewal_sched
 LEFT JOIN trs_renewal_request ON trs_renewal_request.tr_code = trs_renewal_sched.training_code
-WHERE trs_renewal_sched.start_date LIKE '$start%' AND trs_renewal_sched.shift LIKE '$shift%' AND trs_renewal_request.exam_status = 'Failed' AND trs_renewal_request.ft_status = 0 AND trs_renewal_sched.sched_stat = 0 AND trs_renewal_request.requested_by = '$requested_by' AND trs_renewal_request.final_status = 'Retain' GROUP BY trs_renewal_sched.training_code";
+WHERE trs_renewal_sched.start_date LIKE '$start%' AND trs_renewal_sched.shift LIKE '$shift%' AND trs_renewal_request.exam_status = 'Failed' AND trs_renewal_request.ft_status = 0 AND trs_renewal_sched.sched_stat = 0 AND trs_renewal_request.final_status = 'Stop_Processing' AND trs_renewal_request.requested_by = '$requested_by' GROUP BY trs_renewal_sched.training_code";
 
 	$stmt = $conn->prepare($query);
 	$stmt->execute();
@@ -22,7 +22,7 @@ WHERE trs_renewal_sched.start_date LIKE '$start%' AND trs_renewal_sched.shift LI
 			$c++;
 			
 
-			echo '<tr style="cursor:pointer;  class="modal-trigger" data-toggle="modal" data-target="#take_req" onclick="get_take_req_details(&quot;'.$j['id'].'~!~'.$j['training_code'].'~!~'.$j['shift'].'~!~'.$j['start_date'].'~!~'.$j['end_date'].'~!~'.$j['start_time'].'~!~'.$j['end_time'].'~!~'.$j['location'].'~!~'.$j['trainer'].'~!~'.$j['slot'].'&quot;)">';
+			echo '<tr style="cursor:pointer;  class="modal-trigger" data-toggle="modal" data-target="#stop_req" onclick="get_stop_req_details(&quot;'.$j['id'].'~!~'.$j['training_code'].'~!~'.$j['shift'].'~!~'.$j['start_date'].'~!~'.$j['end_date'].'~!~'.$j['start_time'].'~!~'.$j['end_time'].'~!~'.$j['location'].'~!~'.$j['trainer'].'~!~'.$j['slot'].'&quot;)">';
 				echo '<td>'.$c.'</td>';
 				echo '<td>'.$j['training_code'].'</td>';
 				echo '<td>'.$j['shift'].'</td>';
@@ -41,11 +41,11 @@ WHERE trs_renewal_sched.start_date LIKE '$start%' AND trs_renewal_sched.shift LI
 }
 
 
-if ($method == 'fetch_prev_take_req') {
+if ($method == 'fetch_prev_stop_req') {
 	$tr_code = $_POST['tr_code'];
 	$requested_by = $_POST['requested_by'];
 	$c = 0;
-	$query = "SELECT * FROM trs_renewal_request WHERE tr_code = '$tr_code' AND final_status != '' AND ft_status = 0 AND exam_status = 'Failed' AND final_status = 'Retain' AND requested_by = '$requested_by'";
+	$query = "SELECT * FROM trs_renewal_request WHERE tr_code = '$tr_code' AND final_status = 'Stop_Processing' AND ft_status = 0 AND exam_status = 'Failed' AND requested_by = '$requested_by'";
 	$stmt = $conn->prepare($query);
 	$stmt->execute();
 	if ($stmt->rowCount() > 0) {

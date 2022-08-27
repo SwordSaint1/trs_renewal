@@ -51,20 +51,20 @@
                   <p>Import Request</p>
                 </a>
               </li>
-              <li class="nav-item">
+               <li class="nav-item">
                 <a href="request.php" class="nav-link ">
                   <i class="far fa-dot-circle nav-icon"></i>
                   <p>List of Qualified</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="not_qualified.php" class="nav-link active">
+                <a href="not_qualified.php" class="nav-link ">
                   <i class="far fa-dot-circle nav-icon"></i>
                   <p>List of Not Qualified</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="expired.php" class="nav-link">
+               <li class="nav-item">
+                <a href="expired.php" class="nav-link active">
                   <i class="far fa-dot-circle nav-icon"></i>
                   <p>List of Expired</p>
                 </a>
@@ -72,7 +72,7 @@
             </ul>
           </li>
 
-          <li class="nav-item menu-closed">
+          <li class="nav-item menu-close">
             <a href="#" class="nav-link">
               <i class="  fa fa-calendar-alt"></i>
               <p>
@@ -99,20 +99,20 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-                <li class="nav-item">
-                <a href="authorization.php" class="nav-link">
+              <li class="nav-item">
+                <a href="authorization.php" class="nav-link ">
                   <i class="far fa-dot-circle nav-icon"></i>
                   <p>For Authorization</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="passed.php" class="nav-link">
+                <a href="passed.php" class="nav-link ">
                   <i class="far fa-dot-circle nav-icon"></i>
                   <p>List of Passed</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="failed.php" class="nav-link ">
+                <a href="failed.php" class="nav-link">
                   <i class="far fa-dot-circle nav-icon"></i>
                   <p>List of Failed</p>
                 </a>

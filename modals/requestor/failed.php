@@ -8,7 +8,7 @@
               <div class="col-3">
                 <div id="rowscount" hidden></div>
                   <input type="text" name="" id="id_training_code_failed_req" class="form-control" readonly>
-                  <input type="hidden" name="" id="user_commit_sched" value="<?=$name;?>">
+                  <input type="hidden" name="" id="failed_requested_by_prev" value="<?=$name;?>">
               </div>
               <div class="col-9">
                 <p style="text-align:right;">

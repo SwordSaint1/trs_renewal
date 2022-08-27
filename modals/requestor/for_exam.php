@@ -5,7 +5,7 @@
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Schedule for Exam<br>
 <input type="text" name="" id="id_training_code_for_exam" class="form-control" readonly>
-<input type="hidden" name="" id="user_commit_sched" value="<?=$name;?>">
+<input type="hidden" name="" id="request_by_exams" value="<?=$name;?>">
         </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="close()">
           <span aria-hidden="true">&times;</span>

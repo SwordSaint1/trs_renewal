@@ -1,7 +1,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
     load_passed();
-});
+}); 
 	
 const load_passed =()=>{
 	$('#spinner').css('display','block');

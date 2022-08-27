@@ -1,13 +1,13 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	load_for_exam();
-});	
-
+});	 
+ 
 const load_for_exam =()=>{
 	$('#spinner').css('display','block');
 	var start = document.getElementById('start_date_for_exam').value;
 	var shift = document.getElementById('shift_for_exam').value;
-
+    var requested_by = document.getElementById('request_by_exam').value;
 	$.ajax({
       url: '../../process/requestor/for_exam.php',
                 type: 'POST',
@@ -15,7 +15,8 @@ const load_for_exam =()=>{
                 data:{
                     method: 'fetch_for_exam',
                     start:start,
-                    shift:shift
+                    shift:shift,
+                    requested_by:requested_by
                 },success:function(response){
                    document.getElementById('list_of_for_exam').innerHTML = response;
                    $('#spinner').fadeOut(function(){                       
@@ -55,13 +56,16 @@ prev_exam();
 
 const prev_exam =()=>{
 	var tr_code = document.getElementById('id_training_code_for_exam').value;
+    var requested_by = document.getElementById('request_by_exams').value;
+  
 	$.ajax({
       url: '../../process/requestor/for_exam.php',
                 type: 'POST',
                 cache: false,
                 data:{
                     method: 'prev_exam',
-                    tr_code:tr_code
+                    tr_code:tr_code,
+                    requested_by:requested_by
                 },success:function(response){
                    document.getElementById('list_of_req_for_exam').innerHTML = response;
                    $('#spinner').fadeOut(function(){                       

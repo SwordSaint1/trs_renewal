@@ -32,7 +32,7 @@
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">
-                  <input type="hidden" name="" id="user" value="<?=$name;?>">
+                  <input type="hidden" name="" id="request_by_exam" value="<?=$name;?>">
                 </h3>
               </div>
               <!-- /.card-header -->
@@ -42,7 +42,7 @@
                    <div class="row">
                     <div class="col-3">
                     <label>Start Date:</label> <input type="date" name="start_date_for_exam" id="start_date_for_exam" class="form-control">
-                    </div>
+                    </div> 
                     <div class="col-3">
                     <label>Shift:</label> 
                     <select id="shift_for_exam" class="form-control">

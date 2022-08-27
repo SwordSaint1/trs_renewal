@@ -72,8 +72,10 @@
                     <th>Name</th>
                     <th>FALP ID No</th>
                     <th>SP ID No</th>
-                    <th>Exam Status</th>
                     <th>Attendance Status</th>
+                    <th>Exam Status</th>
+                    <th>Exam Start Date</th>
+                    <th>Examiner</th>
             </thead>
             <tbody id="list_of_failed" style="text-align:center;"></tbody>
                 </table>
