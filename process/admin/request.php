@@ -1,6 +1,6 @@
 <?php 
 include '../conn.php';
-
+ 
 $method = $_POST['method'];
 
 if ($method == 'fetch_request') {
@@ -13,9 +13,28 @@ if ($method == 'fetch_request') {
 	if ($stmt->rowCount() > 0) {
 		foreach($stmt->fetchALL() as $j){
 			$reason = $j['reason'];
+			$final_status = $j['final_status'];
 			$c++;
 			
-
+			if ($final_status == 'Retain') {
+			echo '<tr style="color:red;">';
+				echo '<td>'.$c.'</td>';
+				echo '<td>'.$j['code'].'</td>';
+				echo '<td>'.$j['process'].'</td>';
+				echo '<td>'.$j['expiration_on_month'].'</td>';
+				echo '<td>'.$j['authorization_no'].'</td>';
+				echo '<td>'.$j['name'].'</td>';
+				echo '<td>'.$j['falp_id_no'].'</td>';
+				echo '<td>'.$j['sp_id_no'].'</td>';
+				echo '<td>'.$j['batch_no'].'</td>';
+				echo '<td>'.$j['status'].'</td>';
+				if ($reason = 'n/a') {
+					echo '<td></td>';
+				}else{
+					echo '<td>'.$j['reason'].'</td>';
+				}
+			echo '</tr>';
+			}else{
 			echo '<tr>';
 				echo '<td>'.$c.'</td>';
 				echo '<td>'.$j['code'].'</td>';
@@ -33,6 +52,7 @@ if ($method == 'fetch_request') {
 					echo '<td>'.$j['reason'].'</td>';
 				}
 			echo '</tr>';
+			}
 		}
 	}else{
 			echo '<tr>';

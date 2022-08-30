@@ -48,8 +48,10 @@ if ($method == 'prev_exam') {
 	$stmt->execute();
 	if ($stmt->rowCount() > 0) {
 		foreach($stmt->fetchALL() as $j){
+			$final_status = $j['final_status'];
 			$c++;
 
+			if ($final_status == 'Retain') {
 			echo '<tr>';
 				echo '<td>'.$c.'</td>';
 				echo '<td>'.$j['code'].'</td>';
@@ -62,6 +64,20 @@ if ($method == 'prev_exam') {
 				echo '<td>'.$j['exam_status'].'</td>';
 				echo '<td>'.$j['attendance_status'].'</td>';
 			echo '</tr>';
+			}else{
+			echo '<tr>';
+				echo '<td>'.$c.'</td>';
+				echo '<td>'.$j['code'].'</td>';
+				echo '<td>'.$j['process'].'</td>';
+				echo '<td>'.$j['expiration_on_month'].'</td>';
+				echo '<td>'.$j['authorization_no'].'</td>';
+				echo '<td>'.$j['name'].'</td>';
+				echo '<td>'.$j['falp_id_no'].'</td>';
+				echo '<td>'.$j['sp_id_no'].'</td>';
+				echo '<td>'.$j['exam_status'].'</td>';
+				echo '<td>'.$j['attendance_status'].'</td>';
+			echo '</tr>';
+			}			
 		}
 	}else{
 			echo '<tr>';

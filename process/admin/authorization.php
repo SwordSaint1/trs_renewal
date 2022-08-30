@@ -42,9 +42,31 @@ if ($method == 'fetch_prev_auth') {
 	$stmt->execute();
 	if ($stmt->rowCount() > 0) {
 		foreach($stmt->fetchALL() as $j){
+			$final_status = $j['final_status'];
 			$c++;
 			
-
+			if ($final_status == 'Retain') {
+			echo '<tr style="color:red;">';
+				 echo '<td>';
+                echo '<p>
+                        <label>
+                            <input type="checkbox" name="" id="" class="singleCheck" value="'.$j['id'].'">
+                            <span></span>
+                        </label>
+                    </p>';
+                echo '</td>';
+				echo '<td>'.$c.'</td>';
+				echo '<td>'.$j['code'].'</td>';
+				echo '<td>'.$j['process'].'</td>';
+				echo '<td>'.$j['expiration_on_month'].'</td>';
+				echo '<td>'.$j['authorization_no'].'</td>';
+				echo '<td>'.$j['name'].'</td>';
+				echo '<td>'.$j['falp_id_no'].'</td>';
+				echo '<td>'.$j['sp_id_no'].'</td>';
+				echo '<td>'.$j['exam_status'].'</td>';
+				echo '<td>'.$j['attendance_status'].'</td>';
+			echo '</tr>';
+			}else{
 			echo '<tr>';
 				 echo '<td>';
                 echo '<p>
@@ -65,6 +87,7 @@ if ($method == 'fetch_prev_auth') {
 				echo '<td>'.$j['exam_status'].'</td>';
 				echo '<td>'.$j['attendance_status'].'</td>';
 			echo '</tr>';
+			}
 		}
 	}else{
 			echo '<tr>';
